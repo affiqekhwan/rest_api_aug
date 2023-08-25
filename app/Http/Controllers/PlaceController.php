@@ -17,7 +17,8 @@ class PlaceController extends Controller
         $place ->images_url = $request->images_url;
         $place ->Phone_No = $request->Phone_No;
         $place ->email = $request->email;
-        $place ->avg_rating = $request->avg_rating;
+        $place ->comment = $request->comment;
+    
 
 
         if($place -> save()){
@@ -37,7 +38,7 @@ class PlaceController extends Controller
     }
     public function index(){
        // $places = Place::all();
-       $places = Place::select('id','name','email','discription','address','images_url','Phone_No','avg_rating')->get();
+       $places = Place::select('id','name','email','discription','address','images_url','Phone_No','comment')->get();
         if ($places){
             return response()->json([
                 "success"=>true,
@@ -81,7 +82,7 @@ class PlaceController extends Controller
             $place ->images_url = $request->images_url;
             $place ->Phone_No = $request->Phone_No;
             $place ->email = $request->email;
-            $place ->avg_rating = $request->avg_rating;
+            $place ->comment = $request->comment;
 
             if ($place->save()){
                 return response()->json([
