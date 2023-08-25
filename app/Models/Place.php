@@ -16,7 +16,6 @@ class Place extends Model
         'Phone No',
         'image_url',
         'description',
-        'comment',
     ];
 
     public function reviews (){
