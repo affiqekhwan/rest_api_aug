@@ -28,7 +28,7 @@ Route::middleware('jwt.auth')->group(function () {
 
     // Create
     Route:: post ('/places',[PlaceController :: class, 'store']);
-    Route:: post ('/review',[ReviewController :: class, 'store']);
+    Route:: post ('/places/{placeId}/review',[ReviewController :: class, 'store']);
     Route:: post ('/facility',[FacilityController :: class, 'store']);
     // Read
     // Update
@@ -39,6 +39,8 @@ Route::middleware('jwt.auth')->group(function () {
     Route:: delete ('/places/{id}',[PlaceController :: class, 'delete']);
     Route:: delete ('/review/{id}',[ReviewController :: class, 'delete']);
     Route:: delete ('/facility/{id}',[FacilityController :: class, 'delete']);
+
+    Route:: post ('/places/{id}/review',[ReviewController :: class, 'store']);
 
     });
     
